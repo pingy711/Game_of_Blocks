@@ -1,0 +1,1 @@
+I'm new to Javascript and I dint understand how to use functions from libraries. I'm submitting what I have compiled from various online sources and what I have written as of now, it is extremely rough and i still need to work on it after learning more of Javascript. (You can ignore the .cpp file). I'm submitting this becuase the deadline is near.
