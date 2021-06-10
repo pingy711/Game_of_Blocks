@@ -31,22 +31,19 @@ contract Loan is MetaCoin {
     
     address private Owner;
 
-    
-    modifier isOwner() {
+    modifier isOwner() {                                                                        //validates if the calling address is same as that of the owner
         require(msg.sender==Owner);
         _;
     }
     
     constructor() public {
-        Owner = msg.sender;
+        Owner = msg.sender;                                                                     //constructs a contract 
     }
-    
-    // Fill up the following function definitions and also try to justify why some functions are pure and some are view and some are none, in your README.md
     
     function getCompoundInterest(uint256 principle, uint rate, uint time) public pure returns(uint256) {    //very basic function to compute the compound interest
         uint256 interest=0;
         uint256 result=principle;
-        for(uint i=1;i<=time;++i){      //iterative method of finding compound interest
+        for(uint i=1;i<=time;++i){                                                              //iterative method of finding compound interest
             interest = result*rate/100;
             result+=interest;
         }
@@ -55,18 +52,18 @@ contract Loan is MetaCoin {
     
     function reqLoan(uint256 principle, uint rate, uint time) public returns(bool correct) {
         uint check = uint(rate);
-        if(check!=rate)             //checks if input is in the right format
+        if(check!=rate)                                                                        //checks if input is in the right format
             return false;
         uint256 toPay = getCompoundInterest(principle, rate, time);
-        if(toPay<principle)         //checks to see validity of getCompoundInterest function called 
+        if(toPay<principle)                                                                    //checks to see validity of getCompoundInterest function called 
             return false;
-        loans[msg.sender] = toPay;      //if everything is right then we add a mapping in loans
+        loans[msg.sender] = toPay;                                                             //if everything is right then we add a mapping in loans
         emit Request(msg.sender,principle,rate,time,toPay);
         return true;
     }
     
-    function getOwnerBalance() public view returns(uint256) {       //accesses a state variable but doesnt modify it so its a 'view' type
-        return getBalance(Owner);   //inherited member function called with address which is private
+    function getOwnerBalance() public view returns(uint256) {                            //accesses a state variable but doesnt modify it so its a 'view' type
+        return getBalance(Owner);                                                        //inherited member function called with address which is private
     }
     
     function viewDues(address creditor) public isOwner view returns(uint256) { 

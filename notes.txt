@@ -1,0 +1,46 @@
+pragma solidity ^0.5.0 //is like #include something ig
+
+//contract is similar to a class in C++
+contract contract_name{
+	<data_type> <data_scope> variable_name;
+
+	function function_name() <function_scope> returns (<return_type>)
+	{<function_body>
+	 return <reuturn_value>;}
+}
+//just like public private and protected, solidity has public private and internal, apart from this there is also another type which is external, this is only for others to call and cant be called by other member functions
+
+//operators are exactly like in c++
+//comments are exactly like in c++
+//loop and loop control are same as c++
+//if else also like c++
+
+//strings work in a tad bit weird way they are usually stored as bytes
+//bytes to string conversion:
+bytes memory bstr = new bytes(<string_length>);
+string <string_variable_name> = string(bstr);
+
+//arrays are somewhat like in c++
+//fixed array size array declaration
+<type> <array_name> [<array_size>];
+//dynamic array size array declaration
+<type>[] <array_name>
+//runtime array size array decleration
+<type> <array_name>[] = new <type>[](<size);
+
+//enums are enumerators that ensure that you pick only from an allowed set of options
+enum <enumerator_name>{<choices>}
+<enumerator_name> <enumeraor_variable_name>;
+
+//struct is some as that in c++
+
+//function is a bit diff
+function <function_name>(parameter list) scope returns(){
+function_body}
+//we can return more than one thing in solidity from functions
+return(<return_value_1>,<return_value_2>);
+
+//function modifyers are a bit different to anything so far
+//they basically add a condition before the execution of a program
+//see https://www.tutorialspoint.com/solidity/solidity_function_modifiers.htm
+
