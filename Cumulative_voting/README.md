@@ -72,4 +72,4 @@ These 2 features allow the code to be used in various situations apart from thos
 - [Ayush Anand](https://github.com/yushananda)
 - [Yash Goel](https://github.com/yashgoel72)  
   
-Note: This is a local copy included in my personal folder for the sake of completeness of this repository. The link to the main submission can be found [here](https://github.com/pclubiitk/smart-contract-hub/tree/main/Voting/cumulative_voting)
+Note: This is a local copy included in my personal folder for the sake of completeness of this repository. The link to the main submission can be found [here](https://github.com/pclubiitk/smart-contract-hub/tree/main/Voting/cumulative_voting) .
