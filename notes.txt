@@ -1,3 +1,5 @@
+(My personal notes)
+
 pragma solidity ^0.5.0 //is like #include something ig
 
 //contract is similar to a class in C++
